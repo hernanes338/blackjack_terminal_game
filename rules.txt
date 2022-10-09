@@ -1,0 +1,20 @@
+- The game will be the bank vs the player
+- There will be 4 52-card decks (2,3,4,5,6,7,8,9,10,J,Q,K,A)
+
+- The player betting balance will be 1000$ to start the game
+- The player will be able to bet 25, 50 or 100 each round
+- The player must choose how much they want to bet and confirm that amount
+- When the player balance is 0 the game will end
+
+
+- Once the player has confirmed the amount they want to bet, the game starts by dealing 2 cards to the player and 1 to the bank (all visible)
+- The player will have 2 options: hit (get another card dealt) or stand (keep the current card count)
+- When the player chooses hit and the card count is greater than 21, the player loses the round
+- When the player chooses stand, the bank starts dealing cards to themselves
+- The bank must deal cards to themselves until the card count is greater than 16 (17, 18, 19, 20, 21)
+- If the bank card count is greater than 21, the player wins the round
+
+
+Improvements
+- Add split
+- Insurance bet
