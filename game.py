@@ -16,6 +16,9 @@ def place_bet():
         if not bet in (25, 50, 100):
             print("You can only bet 25$, 50$ or 100$")
             continue
+        # control if bet is a string
+        # elif bet:
+        #     True
         else:
             break
     return bet
@@ -155,6 +158,28 @@ while playing == "Y" and player_balance > 0:
     print("Player score: {}".format(player_score))
     print("Dealer score: {}".format(dealer_score))
 
+    while dealer_score < 17:
+        dealer_cards.append(game_deck.pop())
+        dealer_cards_str = ""
+        for i in range(len(dealer_cards)):
+            dealer_cards_str += dealer_cards[i] + ", "
+        print("Dealer cards: {}".format(dealer_cards_str[:-2]))
+
+        dealer_score = 0
+        for i in range(len(dealer_cards)):
+            dealer_score += deck_dict[dealer_cards[i]]
+        print("Player score: {}".format(player_score))
+        print("Dealer score: {}".format(dealer_score))
+
+    if dealer_score > 21:
+        print("Bust!")
+        print("Player wins!")
+        player_balance += bet
+        print("Your balance is {}".format(player_balance))
+        playing = continue_playing()
+        continue
+
+
     #### SCORE COMPARISON ####
     if player_score > dealer_score:
         print("You win!")
@@ -174,6 +199,7 @@ while playing == "Y" and player_balance > 0:
 
     playing = continue_playing()
 
+    # arreglar para que cada 5 manos baraje
     if hand_counter == 5:
         game_deck = shuffle_deck()
 
